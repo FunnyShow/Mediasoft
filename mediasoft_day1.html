@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="t1()">Задание 1</button>
+    <button onclick="t2()">Задание 2</button>
+    <button onclick="t3()">Задание 3</button>
+    <button onclick="t4()">Задание 4</button>
+</body>
+</html>
+<script>
+    let x = 5;
+    let y = 3;
+    let d = ["bella","label","roller"]
+    function t1() {
+        for (let i = 0; i < 100; i++) {
+            if (i % x === 0 && i % y === 0){
+                console.log("FizzBuzz")
+               
+            }
+            else if (i % y === 0){
+                console.log("Buzz")
+             
+            }
+            else if (i % x === 0){
+                console.log("Fizz")
+               
+            }
+            else {
+                console.log(i)
+               
+            } 
+            
+        }
+        return true   
+        console.log(t1())
+    }
+
+</script>

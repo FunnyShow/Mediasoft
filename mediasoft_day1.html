@@ -1,44 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <button onclick="t1()">Задание 1</button>
     <button onclick="t2()">Задание 2</button>
     <button onclick="t3()">Задание 3</button>
     <button onclick="t4()">Задание 4</button>
 </body>
+
 </html>
 <script>
     let x = 5;
     let y = 3;
-    let d = ["bella","label","roller"]
+    
+    const num1 = {
+        I: 1,
+        V: 5,
+        X: 10,
+        L: 50,
+        C: 100,
+        D: 500,
+        M: 1000
+    }
+
+    let a = ["bella", "label", "roller"];
+    let b = ["cool", "lock", "cook"];
+
     function t1() {
         for (let i = 0; i < 100; i++) {
-            if (i % x === 0 && i % y === 0){
+            if (i % x === 0 && i % y === 0) {
                 console.log("FizzBuzz")
-               
+
             }
-            else if (i % y === 0){
+            else if (i % y === 0) {
                 console.log("Buzz")
-             
+
             }
-            else if (i % x === 0){
+            else if (i % x === 0) {
                 console.log("Fizz")
-               
+
             }
             else {
                 console.log(i)
-               
-            } 
-            
+
+            }
+
         }
-        return true   
+        return true
         console.log(t1())
     }
 
+    function t4p1(romanNumber) {
+        let numbers = romanNumber.toUpperCase().split('');
+        let result = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            let num = numbers[i];
+            let nextNum = numbers[i + 1];
+
+            switch (num) {
+                case 'I': result += (nextNum === 'V' || nextNum === 'X') ? -1 : num1[num]; break;
+                case 'X': result += (nextNum === 'L' || nextNum === 'C') ? -10 : num1[num]; break;
+                case 'C': result += (nextNum === 'D' || nextNum === 'M') ? -100 : num1[num]; break;
+                default: result += num1[num]; break;
+            }
+        }
+
+        return result;
+
+    }
+    function t4() {
+        console.log(t4p1(prompt("Введите римскую цифру")));
+    }
 </script>
